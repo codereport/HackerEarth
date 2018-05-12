@@ -30,3 +30,35 @@ int main ()
 
    return 0;
 }
+
+// Alternate solution
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main ()
+{
+   int n; cin >> n;
+   vector<pair<int,bool>> v;
+   while (n--) {
+      int a, b; cin >> a >> b;
+      v.push_back ({ a, true });
+      v.push_back ({ b+1, false});
+   }
+
+   sort (v.begin (), v.end ());
+
+   int x = 0, y = 0, sum = 0;
+
+   for (auto& e : v) {
+      sum += e.second ? 1 : -1;
+      if (sum > y) y = sum, x = e.first;
+   }
+
+   cout << x << " " << y << endl;
+
+   return 0;
+}
