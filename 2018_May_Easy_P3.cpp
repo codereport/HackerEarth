@@ -9,8 +9,8 @@ using namespace std;
 
 void magic_potion (int n, long long k, const vector<int>& v)
 {
-   int beg = 0, end = 0, x = n;       // x = minimum deleted
-   long long sum = 0, y = 0; // y = count of arrays
+   int beg = 0, end = 0, x = n; // x = minimum deleted
+   long long sum = 0, y = 0;    // y = count of arrays
 
    auto calc = [&]() 
    {
